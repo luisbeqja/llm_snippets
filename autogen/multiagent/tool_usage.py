@@ -17,7 +17,7 @@ from tools.web_search import web_search
 model_client = OpenAIChatCompletionClient(
     model="gpt-4o",
     # You should consider using environment variables for API keys
-    api_key="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",
+    api_key=os.getenv("OPENAI_API_KEY"),
 )
 
 tool_user = AssistantAgent(

@@ -1,5 +1,5 @@
 import asyncio
-
+import os
 from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.base import TaskResult
 from autogen_agentchat.conditions import ExternalTermination, TextMentionTermination
@@ -9,7 +9,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 # Create an OpenAI model client.
 model_client = OpenAIChatCompletionClient(
     model="gpt-4o-2024-08-06",
-    api_key="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",
+    api_key=os.getenv("OPENAI_API_KEY"),
 )
 
 # Create the primary agent.
